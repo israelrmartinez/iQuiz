@@ -29,13 +29,20 @@ struct ListRow: View {
                 Text(eachQuiz.title)
             }
             Text(eachQuiz.desc)
-            NavigationLink(destination: Text("\(eachQuiz.title) screen"), label: {Text("Next screen")})
+            NavigationLink(destination: {
+                Label(
+                    title: {Text("iQuiz")}, icon: {})
+                    .padding()
+                Text("\(eachQuiz.title) screen")
+            }, label: {Text("Next screen")})
         }
     }
 }
 
 var myQuizzes = [
-    Quiz(quizID: 1, quizName: "Math", quizImage: "math")
+    Quiz(quizName: "Math", quizImage: "math"),
+    Quiz(quizName: "Marvel", quizImage: "marvel"),
+    Quiz(quizName: "Science", quizImage: "science")
 ]
 
 struct SwiftUIView_Previews: PreviewProvider {
