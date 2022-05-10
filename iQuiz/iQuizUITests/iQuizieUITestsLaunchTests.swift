@@ -1,13 +1,13 @@
 //
-//  iQuizUITestsLaunchTests.swift
-//  iQuizUITests
+//  iQuizieUITestsLaunchTests.swift
+//  iQuizieUITests
 //
-//  Created by stlp on 5/5/22.
+//  Created by stlp on 5/10/22.
 //
 
 import XCTest
 
-class iQuizUITestsLaunchTests: XCTestCase {
+class iQuizieUITestsLaunchTests: XCTestCase {
 
     override class var runsForEachTargetApplicationUIConfiguration: Bool {
         true

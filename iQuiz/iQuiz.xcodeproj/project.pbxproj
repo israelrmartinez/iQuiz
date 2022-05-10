@@ -7,66 +7,61 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		DB1F13492824967600C86F43 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB1F13482824967600C86F43 /* AppDelegate.swift */; };
-		DB1F134B2824967600C86F43 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB1F134A2824967600C86F43 /* SceneDelegate.swift */; };
-		DB1F134D2824967600C86F43 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB1F134C2824967600C86F43 /* ViewController.swift */; };
-		DB1F13502824967600C86F43 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DB1F134E2824967600C86F43 /* Main.storyboard */; };
-		DB1F13522824967800C86F43 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DB1F13512824967800C86F43 /* Assets.xcassets */; };
-		DB1F13552824967800C86F43 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DB1F13532824967800C86F43 /* LaunchScreen.storyboard */; };
-		DB1F13602824967900C86F43 /* iQuizTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB1F135F2824967900C86F43 /* iQuizTests.swift */; };
-		DB1F136A2824967900C86F43 /* iQuizUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB1F13692824967900C86F43 /* iQuizUITests.swift */; };
-		DB1F136C2824967900C86F43 /* iQuizUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB1F136B2824967900C86F43 /* iQuizUITestsLaunchTests.swift */; };
+		DB1F13C5282A9A9700C86F43 /* iQuizieApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB1F13C4282A9A9700C86F43 /* iQuizieApp.swift */; };
+		DB1F13C7282A9A9700C86F43 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB1F13C6282A9A9700C86F43 /* ContentView.swift */; };
+		DB1F13C9282A9A9900C86F43 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DB1F13C8282A9A9900C86F43 /* Assets.xcassets */; };
+		DB1F13CC282A9A9900C86F43 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DB1F13CB282A9A9900C86F43 /* Preview Assets.xcassets */; };
+		DB1F13D6282A9A9900C86F43 /* iQuizieTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB1F13D5282A9A9900C86F43 /* iQuizieTests.swift */; };
+		DB1F13E0282A9A9900C86F43 /* iQuizieUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB1F13DF282A9A9900C86F43 /* iQuizieUITests.swift */; };
+		DB1F13E2282A9A9900C86F43 /* iQuizieUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB1F13E1282A9A9900C86F43 /* iQuizieUITestsLaunchTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		DB1F135C2824967900C86F43 /* PBXContainerItemProxy */ = {
+		DB1F13D2282A9A9900C86F43 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = DB1F133D2824967600C86F43 /* Project object */;
+			containerPortal = DB1F13B9282A9A9700C86F43 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = DB1F13442824967600C86F43;
-			remoteInfo = iQuiz;
+			remoteGlobalIDString = DB1F13C0282A9A9700C86F43;
+			remoteInfo = iQuizie;
 		};
-		DB1F13662824967900C86F43 /* PBXContainerItemProxy */ = {
+		DB1F13DC282A9A9900C86F43 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = DB1F133D2824967600C86F43 /* Project object */;
+			containerPortal = DB1F13B9282A9A9700C86F43 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = DB1F13442824967600C86F43;
-			remoteInfo = iQuiz;
+			remoteGlobalIDString = DB1F13C0282A9A9700C86F43;
+			remoteInfo = iQuizie;
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		DB1F13452824967600C86F43 /* iQuiz.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iQuiz.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		DB1F13482824967600C86F43 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		DB1F134A2824967600C86F43 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		DB1F134C2824967600C86F43 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		DB1F134F2824967600C86F43 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		DB1F13512824967800C86F43 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		DB1F13542824967800C86F43 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		DB1F13562824967800C86F43 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		DB1F135B2824967900C86F43 /* iQuizTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = iQuizTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		DB1F135F2824967900C86F43 /* iQuizTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iQuizTests.swift; sourceTree = "<group>"; };
-		DB1F13652824967900C86F43 /* iQuizUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = iQuizUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		DB1F13692824967900C86F43 /* iQuizUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iQuizUITests.swift; sourceTree = "<group>"; };
-		DB1F136B2824967900C86F43 /* iQuizUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iQuizUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		DB1F13C1282A9A9700C86F43 /* iQuizie.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iQuizie.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		DB1F13C4282A9A9700C86F43 /* iQuizieApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iQuizieApp.swift; sourceTree = "<group>"; };
+		DB1F13C6282A9A9700C86F43 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		DB1F13C8282A9A9900C86F43 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		DB1F13CB282A9A9900C86F43 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		DB1F13D1282A9A9900C86F43 /* iQuizieTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = iQuizieTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		DB1F13D5282A9A9900C86F43 /* iQuizieTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iQuizieTests.swift; sourceTree = "<group>"; };
+		DB1F13DB282A9A9900C86F43 /* iQuizieUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = iQuizieUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		DB1F13DF282A9A9900C86F43 /* iQuizieUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iQuizieUITests.swift; sourceTree = "<group>"; };
+		DB1F13E1282A9A9900C86F43 /* iQuizieUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iQuizieUITestsLaunchTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		DB1F13422824967600C86F43 /* Frameworks */ = {
+		DB1F13BE282A9A9700C86F43 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		DB1F13582824967900C86F43 /* Frameworks */ = {
+		DB1F13CE282A9A9900C86F43 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		DB1F13622824967900C86F43 /* Frameworks */ = {
+		DB1F13D8282A9A9900C86F43 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -76,137 +71,142 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		DB1F133C2824967600C86F43 = {
+		DB1F13B8282A9A9700C86F43 = {
 			isa = PBXGroup;
 			children = (
-				DB1F13472824967600C86F43 /* iQuiz */,
-				DB1F135E2824967900C86F43 /* iQuizTests */,
-				DB1F13682824967900C86F43 /* iQuizUITests */,
-				DB1F13462824967600C86F43 /* Products */,
+				DB1F13C3282A9A9700C86F43 /* iQuizie */,
+				DB1F13D4282A9A9900C86F43 /* iQuizieTests */,
+				DB1F13DE282A9A9900C86F43 /* iQuizieUITests */,
+				DB1F13C2282A9A9700C86F43 /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		DB1F13462824967600C86F43 /* Products */ = {
+		DB1F13C2282A9A9700C86F43 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				DB1F13452824967600C86F43 /* iQuiz.app */,
-				DB1F135B2824967900C86F43 /* iQuizTests.xctest */,
-				DB1F13652824967900C86F43 /* iQuizUITests.xctest */,
+				DB1F13C1282A9A9700C86F43 /* iQuizie.app */,
+				DB1F13D1282A9A9900C86F43 /* iQuizieTests.xctest */,
+				DB1F13DB282A9A9900C86F43 /* iQuizieUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		DB1F13472824967600C86F43 /* iQuiz */ = {
+		DB1F13C3282A9A9700C86F43 /* iQuizie */ = {
 			isa = PBXGroup;
 			children = (
-				DB1F13482824967600C86F43 /* AppDelegate.swift */,
-				DB1F134A2824967600C86F43 /* SceneDelegate.swift */,
-				DB1F134C2824967600C86F43 /* ViewController.swift */,
-				DB1F134E2824967600C86F43 /* Main.storyboard */,
-				DB1F13512824967800C86F43 /* Assets.xcassets */,
-				DB1F13532824967800C86F43 /* LaunchScreen.storyboard */,
-				DB1F13562824967800C86F43 /* Info.plist */,
+				DB1F13C4282A9A9700C86F43 /* iQuizieApp.swift */,
+				DB1F13C6282A9A9700C86F43 /* ContentView.swift */,
+				DB1F13C8282A9A9900C86F43 /* Assets.xcassets */,
+				DB1F13CA282A9A9900C86F43 /* Preview Content */,
 			);
-			path = iQuiz;
+			path = iQuizie;
 			sourceTree = "<group>";
 		};
-		DB1F135E2824967900C86F43 /* iQuizTests */ = {
+		DB1F13CA282A9A9900C86F43 /* Preview Content */ = {
 			isa = PBXGroup;
 			children = (
-				DB1F135F2824967900C86F43 /* iQuizTests.swift */,
+				DB1F13CB282A9A9900C86F43 /* Preview Assets.xcassets */,
 			);
-			path = iQuizTests;
+			path = "Preview Content";
 			sourceTree = "<group>";
 		};
-		DB1F13682824967900C86F43 /* iQuizUITests */ = {
+		DB1F13D4282A9A9900C86F43 /* iQuizieTests */ = {
 			isa = PBXGroup;
 			children = (
-				DB1F13692824967900C86F43 /* iQuizUITests.swift */,
-				DB1F136B2824967900C86F43 /* iQuizUITestsLaunchTests.swift */,
+				DB1F13D5282A9A9900C86F43 /* iQuizieTests.swift */,
 			);
-			path = iQuizUITests;
+			path = iQuizieTests;
+			sourceTree = "<group>";
+		};
+		DB1F13DE282A9A9900C86F43 /* iQuizieUITests */ = {
+			isa = PBXGroup;
+			children = (
+				DB1F13DF282A9A9900C86F43 /* iQuizieUITests.swift */,
+				DB1F13E1282A9A9900C86F43 /* iQuizieUITestsLaunchTests.swift */,
+			);
+			path = iQuizieUITests;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		DB1F13442824967600C86F43 /* iQuiz */ = {
+		DB1F13C0282A9A9700C86F43 /* iQuizie */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = DB1F136F2824967900C86F43 /* Build configuration list for PBXNativeTarget "iQuiz" */;
+			buildConfigurationList = DB1F13E5282A9A9900C86F43 /* Build configuration list for PBXNativeTarget "iQuizie" */;
 			buildPhases = (
-				DB1F13412824967600C86F43 /* Sources */,
-				DB1F13422824967600C86F43 /* Frameworks */,
-				DB1F13432824967600C86F43 /* Resources */,
+				DB1F13BD282A9A9700C86F43 /* Sources */,
+				DB1F13BE282A9A9700C86F43 /* Frameworks */,
+				DB1F13BF282A9A9700C86F43 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = iQuiz;
-			productName = iQuiz;
-			productReference = DB1F13452824967600C86F43 /* iQuiz.app */;
+			name = iQuizie;
+			productName = iQuizie;
+			productReference = DB1F13C1282A9A9700C86F43 /* iQuizie.app */;
 			productType = "com.apple.product-type.application";
 		};
-		DB1F135A2824967900C86F43 /* iQuizTests */ = {
+		DB1F13D0282A9A9900C86F43 /* iQuizieTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = DB1F13722824967900C86F43 /* Build configuration list for PBXNativeTarget "iQuizTests" */;
+			buildConfigurationList = DB1F13E8282A9A9900C86F43 /* Build configuration list for PBXNativeTarget "iQuizieTests" */;
 			buildPhases = (
-				DB1F13572824967900C86F43 /* Sources */,
-				DB1F13582824967900C86F43 /* Frameworks */,
-				DB1F13592824967900C86F43 /* Resources */,
+				DB1F13CD282A9A9900C86F43 /* Sources */,
+				DB1F13CE282A9A9900C86F43 /* Frameworks */,
+				DB1F13CF282A9A9900C86F43 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				DB1F135D2824967900C86F43 /* PBXTargetDependency */,
+				DB1F13D3282A9A9900C86F43 /* PBXTargetDependency */,
 			);
-			name = iQuizTests;
-			productName = iQuizTests;
-			productReference = DB1F135B2824967900C86F43 /* iQuizTests.xctest */;
+			name = iQuizieTests;
+			productName = iQuizieTests;
+			productReference = DB1F13D1282A9A9900C86F43 /* iQuizieTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		DB1F13642824967900C86F43 /* iQuizUITests */ = {
+		DB1F13DA282A9A9900C86F43 /* iQuizieUITests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = DB1F13752824967900C86F43 /* Build configuration list for PBXNativeTarget "iQuizUITests" */;
+			buildConfigurationList = DB1F13EB282A9A9900C86F43 /* Build configuration list for PBXNativeTarget "iQuizieUITests" */;
 			buildPhases = (
-				DB1F13612824967900C86F43 /* Sources */,
-				DB1F13622824967900C86F43 /* Frameworks */,
-				DB1F13632824967900C86F43 /* Resources */,
+				DB1F13D7282A9A9900C86F43 /* Sources */,
+				DB1F13D8282A9A9900C86F43 /* Frameworks */,
+				DB1F13D9282A9A9900C86F43 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				DB1F13672824967900C86F43 /* PBXTargetDependency */,
+				DB1F13DD282A9A9900C86F43 /* PBXTargetDependency */,
 			);
-			name = iQuizUITests;
-			productName = iQuizUITests;
-			productReference = DB1F13652824967900C86F43 /* iQuizUITests.xctest */;
+			name = iQuizieUITests;
+			productName = iQuizieUITests;
+			productReference = DB1F13DB282A9A9900C86F43 /* iQuizieUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		DB1F133D2824967600C86F43 /* Project object */ = {
+		DB1F13B9282A9A9700C86F43 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1330;
 				LastUpgradeCheck = 1330;
 				TargetAttributes = {
-					DB1F13442824967600C86F43 = {
+					DB1F13C0282A9A9700C86F43 = {
 						CreatedOnToolsVersion = 13.3;
 					};
-					DB1F135A2824967900C86F43 = {
+					DB1F13D0282A9A9900C86F43 = {
 						CreatedOnToolsVersion = 13.3;
-						TestTargetID = DB1F13442824967600C86F43;
+						TestTargetID = DB1F13C0282A9A9700C86F43;
 					};
-					DB1F13642824967900C86F43 = {
+					DB1F13DA282A9A9900C86F43 = {
 						CreatedOnToolsVersion = 13.3;
-						TestTargetID = DB1F13442824967600C86F43;
+						TestTargetID = DB1F13C0282A9A9700C86F43;
 					};
 				};
 			};
-			buildConfigurationList = DB1F13402824967600C86F43 /* Build configuration list for PBXProject "iQuiz" */;
+			buildConfigurationList = DB1F13BC282A9A9700C86F43 /* Build configuration list for PBXProject "iQuizie" */;
 			compatibilityVersion = "Xcode 13.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -214,37 +214,36 @@
 				en,
 				Base,
 			);
-			mainGroup = DB1F133C2824967600C86F43;
-			productRefGroup = DB1F13462824967600C86F43 /* Products */;
+			mainGroup = DB1F13B8282A9A9700C86F43;
+			productRefGroup = DB1F13C2282A9A9700C86F43 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				DB1F13442824967600C86F43 /* iQuiz */,
-				DB1F135A2824967900C86F43 /* iQuizTests */,
-				DB1F13642824967900C86F43 /* iQuizUITests */,
+				DB1F13C0282A9A9700C86F43 /* iQuizie */,
+				DB1F13D0282A9A9900C86F43 /* iQuizieTests */,
+				DB1F13DA282A9A9900C86F43 /* iQuizieUITests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		DB1F13432824967600C86F43 /* Resources */ = {
+		DB1F13BF282A9A9700C86F43 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DB1F13552824967800C86F43 /* LaunchScreen.storyboard in Resources */,
-				DB1F13522824967800C86F43 /* Assets.xcassets in Resources */,
-				DB1F13502824967600C86F43 /* Main.storyboard in Resources */,
+				DB1F13CC282A9A9900C86F43 /* Preview Assets.xcassets in Resources */,
+				DB1F13C9282A9A9900C86F43 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		DB1F13592824967900C86F43 /* Resources */ = {
+		DB1F13CF282A9A9900C86F43 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		DB1F13632824967900C86F43 /* Resources */ = {
+		DB1F13D9282A9A9900C86F43 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -254,69 +253,49 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		DB1F13412824967600C86F43 /* Sources */ = {
+		DB1F13BD282A9A9700C86F43 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DB1F134D2824967600C86F43 /* ViewController.swift in Sources */,
-				DB1F13492824967600C86F43 /* AppDelegate.swift in Sources */,
-				DB1F134B2824967600C86F43 /* SceneDelegate.swift in Sources */,
+				DB1F13C7282A9A9700C86F43 /* ContentView.swift in Sources */,
+				DB1F13C5282A9A9700C86F43 /* iQuizieApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		DB1F13572824967900C86F43 /* Sources */ = {
+		DB1F13CD282A9A9900C86F43 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DB1F13602824967900C86F43 /* iQuizTests.swift in Sources */,
+				DB1F13D6282A9A9900C86F43 /* iQuizieTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		DB1F13612824967900C86F43 /* Sources */ = {
+		DB1F13D7282A9A9900C86F43 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DB1F136A2824967900C86F43 /* iQuizUITests.swift in Sources */,
-				DB1F136C2824967900C86F43 /* iQuizUITestsLaunchTests.swift in Sources */,
+				DB1F13E0282A9A9900C86F43 /* iQuizieUITests.swift in Sources */,
+				DB1F13E2282A9A9900C86F43 /* iQuizieUITestsLaunchTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		DB1F135D2824967900C86F43 /* PBXTargetDependency */ = {
+		DB1F13D3282A9A9900C86F43 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = DB1F13442824967600C86F43 /* iQuiz */;
-			targetProxy = DB1F135C2824967900C86F43 /* PBXContainerItemProxy */;
+			target = DB1F13C0282A9A9700C86F43 /* iQuizie */;
+			targetProxy = DB1F13D2282A9A9900C86F43 /* PBXContainerItemProxy */;
 		};
-		DB1F13672824967900C86F43 /* PBXTargetDependency */ = {
+		DB1F13DD282A9A9900C86F43 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = DB1F13442824967600C86F43 /* iQuiz */;
-			targetProxy = DB1F13662824967900C86F43 /* PBXContainerItemProxy */;
+			target = DB1F13C0282A9A9700C86F43 /* iQuizie */;
+			targetProxy = DB1F13DC282A9A9900C86F43 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
-/* Begin PBXVariantGroup section */
-		DB1F134E2824967600C86F43 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				DB1F134F2824967600C86F43 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		DB1F13532824967800C86F43 /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				DB1F13542824967800C86F43 /* Base */,
-			);
-			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
-
 /* Begin XCBuildConfiguration section */
-		DB1F136D2824967900C86F43 /* Debug */ = {
+		DB1F13E3282A9A9900C86F43 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -376,7 +355,7 @@
 			};
 			name = Debug;
 		};
-		DB1F136E2824967900C86F43 /* Release */ = {
+		DB1F13E4282A9A9900C86F43 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -430,19 +409,20 @@
 			};
 			name = Release;
 		};
-		DB1F13702824967900C86F43 /* Debug */ = {
+		DB1F13E6282A9A9900C86F43 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"iQuizie/Preview Content\"";
 				DEVELOPMENT_TEAM = 35HWH8998P;
+				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = iQuiz/Info.plist;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -450,7 +430,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.israelma.iQuiz;
+				PRODUCT_BUNDLE_IDENTIFIER = com.israelma.iQuizie;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -458,19 +438,20 @@
 			};
 			name = Debug;
 		};
-		DB1F13712824967900C86F43 /* Release */ = {
+		DB1F13E7282A9A9900C86F43 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"iQuizie/Preview Content\"";
 				DEVELOPMENT_TEAM = 35HWH8998P;
+				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = iQuiz/Info.plist;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
-				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -478,7 +459,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.israelma.iQuiz;
+				PRODUCT_BUNDLE_IDENTIFIER = com.israelma.iQuizie;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -486,7 +467,7 @@
 			};
 			name = Release;
 		};
-		DB1F13732824967900C86F43 /* Debug */ = {
+		DB1F13E9282A9A9900C86F43 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
@@ -497,16 +478,16 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.4;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.israelma.iQuizTests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.israelma.iQuizieTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/iQuiz.app/iQuiz";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/iQuizie.app/iQuizie";
 			};
 			name = Debug;
 		};
-		DB1F13742824967900C86F43 /* Release */ = {
+		DB1F13EA282A9A9900C86F43 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
@@ -517,16 +498,16 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.4;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.israelma.iQuizTests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.israelma.iQuizieTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/iQuiz.app/iQuiz";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/iQuizie.app/iQuizie";
 			};
 			name = Release;
 		};
-		DB1F13762824967900C86F43 /* Debug */ = {
+		DB1F13EC282A9A9900C86F43 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
@@ -535,16 +516,16 @@
 				DEVELOPMENT_TEAM = 35HWH8998P;
 				GENERATE_INFOPLIST_FILE = YES;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.israelma.iQuizUITests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.israelma.iQuizieUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = iQuiz;
+				TEST_TARGET_NAME = iQuizie;
 			};
 			name = Debug;
 		};
-		DB1F13772824967900C86F43 /* Release */ = {
+		DB1F13ED282A9A9900C86F43 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
@@ -553,55 +534,55 @@
 				DEVELOPMENT_TEAM = 35HWH8998P;
 				GENERATE_INFOPLIST_FILE = YES;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.israelma.iQuizUITests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.israelma.iQuizieUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = iQuiz;
+				TEST_TARGET_NAME = iQuizie;
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		DB1F13402824967600C86F43 /* Build configuration list for PBXProject "iQuiz" */ = {
+		DB1F13BC282A9A9700C86F43 /* Build configuration list for PBXProject "iQuizie" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				DB1F136D2824967900C86F43 /* Debug */,
-				DB1F136E2824967900C86F43 /* Release */,
+				DB1F13E3282A9A9900C86F43 /* Debug */,
+				DB1F13E4282A9A9900C86F43 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		DB1F136F2824967900C86F43 /* Build configuration list for PBXNativeTarget "iQuiz" */ = {
+		DB1F13E5282A9A9900C86F43 /* Build configuration list for PBXNativeTarget "iQuizie" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				DB1F13702824967900C86F43 /* Debug */,
-				DB1F13712824967900C86F43 /* Release */,
+				DB1F13E6282A9A9900C86F43 /* Debug */,
+				DB1F13E7282A9A9900C86F43 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		DB1F13722824967900C86F43 /* Build configuration list for PBXNativeTarget "iQuizTests" */ = {
+		DB1F13E8282A9A9900C86F43 /* Build configuration list for PBXNativeTarget "iQuizieTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				DB1F13732824967900C86F43 /* Debug */,
-				DB1F13742824967900C86F43 /* Release */,
+				DB1F13E9282A9A9900C86F43 /* Debug */,
+				DB1F13EA282A9A9900C86F43 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		DB1F13752824967900C86F43 /* Build configuration list for PBXNativeTarget "iQuizUITests" */ = {
+		DB1F13EB282A9A9900C86F43 /* Build configuration list for PBXNativeTarget "iQuizieUITests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				DB1F13762824967900C86F43 /* Debug */,
-				DB1F13772824967900C86F43 /* Release */,
+				DB1F13EC282A9A9900C86F43 /* Debug */,
+				DB1F13ED282A9A9900C86F43 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = DB1F133D2824967600C86F43 /* Project object */;
+	rootObject = DB1F13B9282A9A9700C86F43 /* Project object */;
 }

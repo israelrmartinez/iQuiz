@@ -1,14 +1,14 @@
 //
-//  iQuizTests.swift
-//  iQuizTests
+//  iQuizieTests.swift
+//  iQuizieTests
 //
-//  Created by stlp on 5/5/22.
+//  Created by stlp on 5/10/22.
 //
 
 import XCTest
-@testable import iQuiz
+@testable import iQuizie
 
-class iQuizTests: XCTestCase {
+class iQuizieTests: XCTestCase {
 
     override func setUpWithError() throws {
         // Put setup code here. This method is called before the invocation of each test method in the class.
