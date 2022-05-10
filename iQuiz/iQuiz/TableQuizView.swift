@@ -11,10 +11,8 @@ struct QuizList: View {
     var quizzes: [Quiz]
     
     var body: some View {
-        NavigationView {
-            List(quizzes) {
-                quiz in ListRow(eachQuiz: quiz)
-            }
+        List(quizzes) {
+            quiz in ListRow(eachQuiz: quiz)
         }
     }
 }
@@ -22,20 +20,22 @@ struct QuizList: View {
 struct ListRow: View {
     var eachQuiz: Quiz
     var body: some View {
-        HStack {
-            Image(eachQuiz.image)
-                .resizable()
-                .aspectRatio(contentMode: .fit)
-                .frame(maxWidth: 40)
-            Text(eachQuiz.name)
+        VStack {
+            HStack {
+                Image(eachQuiz.img)
+                    .resizable()
+                    .aspectRatio(contentMode: .fit)
+                    .frame(maxWidth: 40)
+                Text(eachQuiz.title)
+            }
+            Text(eachQuiz.desc)
+            NavigationLink(destination: Text("\(eachQuiz.title) screen"), label: {Text("Next screen")})
         }
     }
 }
 
 var myQuizzes = [
-    Quiz(id: 1, name: "Math", image: "math"),
-    Quiz(id: 2, name: "Marvel", image: "marvel"),
-    Quiz(id: 3, name: "Science", image: "science")
+    Quiz(quizID: 1, quizName: "Math", quizImage: "math")
 ]
 
 struct SwiftUIView_Previews: PreviewProvider {

@@ -10,9 +10,9 @@ import SwiftUI
 struct ContentView: View {
     @State private var showingAlert = false
     var myQuizzes = [
-        Quiz(id: 1, name: "Math", image: "math"),
-        Quiz(id: 2, name: "Marvel", image: "marvel"),
-        Quiz(id: 3, name: "Science", image: "science")
+        Quiz(quizID: 1, quizName: "Math", quizImage: "math"),
+        Quiz(quizID: 2, quizName: "Marvel", quizImage: "marvel"),
+        Quiz(quizID: 3, quizName: "Science", quizImage: "science")
     ]
     
     var body: some View {
