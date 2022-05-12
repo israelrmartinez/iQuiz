@@ -14,7 +14,7 @@ struct Quiz: Identifiable {
     var desc: String
     var img: String
     var questions: [Question] = []
-    var answers: [String] = []
+//    var answers: [String] = []
     
     init(quiz test: Dictionary<String, Any>) {
         self.title = test["title"] as! String

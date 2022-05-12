@@ -20,7 +20,7 @@ struct QuizView: View {
             Spacer()
             Text(quiz.desc)
                 .padding()
-            NavigationLink(destination: QuestionViews(quiz), label: {Text("Go")})
+            NavigationLink(destination: QuestionViews(quiz.questions), label: {Text("Go")})
             Spacer()
         }
     }

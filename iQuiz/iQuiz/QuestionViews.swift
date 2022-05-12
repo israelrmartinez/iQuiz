@@ -8,25 +8,30 @@
 import SwiftUI
 
 struct QuestionViews: View {
-    var quiz: Quiz
+    var questions: [Question]
     var numQuestions: Int
     
-    init(_ quiz: Quiz) {
-        self.quiz = quiz
-        self.numQuestions = quiz.questions[0].answers.count
+    init(_ quests: [Question]) {
+        self.questions = quests
+        self.numQuestions = questions[0].answers.count
     }
     
     var body: some View {
-//        VStack {
-//            Text(quiz.desc)
-//            Text(quiz.title)
-//            Text(quiz.questions[0].answer)
+        VStack {
+            Text(questions[0].text)
+            Text(questions[0].answers[1])
+            Text(questions[0].answer)
+            QuestionView(question: questions[0])
+        }
+//        ForEach(1..<numQuestions, id: \.self) { i in
+//            QuestionView(question: questions[0])
 //        }
-        QuestionView(question: quiz.questions[0])
     }
 }
 
 struct QuestionView: View {
+    @State var selection: String = ""
+    
     var question: Question
 //    var quz: Quiz
 //    print(question)
@@ -37,8 +42,11 @@ struct QuestionView: View {
                 .padding()
             Text(question.answer)
                 .padding()
+            Text(question.answers[2])
+                .padding()
             Spacer()
         }
+
 //        Text(quz["title"] as! String)
     }
 //    func he() {
@@ -48,7 +56,7 @@ struct QuestionView: View {
 
 struct QuestionViews_Previews: PreviewProvider {
     static var previews: some View {
-        QuestionViews(quesQuiz)
+        QuestionViews(quesQuiz.questions)
     }
 }
 
