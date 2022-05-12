@@ -8,7 +8,8 @@
 import SwiftUI
 
 struct QuizList: View {
-    var quizzes: [Quiz]
+    var quizzes: [Quizes]
+    var xQuiz: [XQuiz]
     
     var body: some View {
         List(quizzes) {
@@ -18,7 +19,7 @@ struct QuizList: View {
 }
 
 struct ListRow: View {
-    var eachQuiz: Quiz
+    var eachQuiz: Quizes
     var body: some View {
         VStack {
             HStack {
@@ -40,13 +41,13 @@ struct ListRow: View {
 }
 
 var myQuizzes = [
-    Quiz(quizName: "Math", quizImage: "math"),
-    Quiz(quizName: "Marvel", quizImage: "marvel"),
-    Quiz(quizName: "Science", quizImage: "science")
+    Quizes(quizName: "Math", quizImage: "math"),
+    Quizes(quizName: "Marvel", quizImage: "marvel"),
+    Quizes(quizName: "Science", quizImage: "science")
 ]
 
 var xQuizzes = [
-    XQuiz([ "title":"Marvel Super Heroes", "desc": "Avengers, Assemble!",
+    XQuiz(quiz: [ "title":"Marvel Super Heroes", "desc": "Avengers, Assemble!",
            "questions":[
              ["text":"Who is Iron Man?",
                "answer":"1",
@@ -78,6 +79,6 @@ var xQuizzes = [
 
 struct SwiftUIView_Previews: PreviewProvider {
     static var previews: some View {
-        QuizList(quizzes: myQuizzes)
+        QuizList(quizzes: myQuizzes, xQuiz: xQuizzes)
     }
 }
