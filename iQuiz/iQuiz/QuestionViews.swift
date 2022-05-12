@@ -10,28 +10,64 @@ import SwiftUI
 struct QuestionViews: View {
     var questions: [Question]
     var numQuestions: Int
+    var views: [QuestionView] = []
+//    @StateObject private var viewModel: [QuestionView]
     
     init(_ quests: [Question]) {
         self.questions = quests
         self.numQuestions = questions[0].answers.count
+        getViews()
+    }
+    
+    mutating func getViews() {
+        var setViews: [QuestionView] = []
+        for quest in questions {
+            setViews.append(QuestionView(question: quest))
+        }
+        self.views = setViews
+        
     }
     
     var body: some View {
 //            Text(questions[0].text)
-            ForEach(questions.indices) { index in
-//                Text("answer \(index): \(questions[index].answer)"
-                QuestionView(question: questions[index])
+        NavigationView {
+            
+//            ForEach(questions.indices) { index in
+//    //                Text("answer \(index): \(questions[index].answer)"
+//                    if index < numQuestions {
+//                        VStack {
+//                            Text("index: \(index)")
+//                            QuestionView(question: questions[index])
+//                            NavigationLink(destination: getDestination(index), label: {Text("Next")})
+//                        }
+//                    } else {
+//                        QuestionView(question: questions[index])
+//                    }
+//                }
+//            Text("this view: \(views)")
+            VStack {
+                views[0]
             }
+        }
 //            Text("answer: \(questions[0].answer)")
 //            QuestionView(question: questions[0])
 //        ForEach(1..<numQuestions, id: \.self) { i in
 //            QuestionView(question: questions[0])
 //        }
     }
+    
+    func getDestination(_ index: Int) -> QuestionView {
+        if index < numQuestions {
+            return views[index + 1]
+        } else {
+            return views[index]
+        }
+    }
 }
 
 struct QuestionView: View {
     @State var selection: String = ""
+    @State var submitted: Bool = false
     
     var question: Question
 //    var quz: Quiz
@@ -41,8 +77,10 @@ struct QuestionView: View {
             Text(question.text)
                 .padding()
             ForEach(question.answers.indices) { index in
-                Text(question.answers[index])
-                    .padding()
+                HStack {
+                    Text(question.answers[index])
+                        .padding()
+                }
             }
             Text(question.answer)
                 .padding()
@@ -58,6 +96,7 @@ struct QuestionView: View {
 struct QuestionViews_Previews: PreviewProvider {
     static var previews: some View {
         QuestionViews(quesQuiz.questions)
+            .previewInterfaceOrientation(.portraitUpsideDown)
     }
 }
 

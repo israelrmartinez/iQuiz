@@ -25,7 +25,7 @@ struct Quiz: Identifiable {
         print("quests: \(quests)")
 //        print("array: \(quests)")
 //        print("typeof: \(type(of: quests))")
-        self.questions = setTest(quests: quests)
+        self.questions = setQuiz(quests: quests)
 //        print("getQuestion: \(quests[0] )")
         let quest = quests[0]
         print("getQuestion: \(quest)")
@@ -33,7 +33,7 @@ struct Quiz: Identifiable {
 //        setTest()
     }
     
-    func setTest(quests queries: [Dictionary<String, Any>]) -> [Question] {
+    func setQuiz(quests queries: [Dictionary<String, Any>]) -> [Question] {
         var questionHolder: [Question] = []
         print("queries: \(queries)")
         for query in queries {
