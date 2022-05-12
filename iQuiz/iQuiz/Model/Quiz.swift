@@ -7,7 +7,7 @@
 
 import UIKit
 
-class Quiz: NSObject {
+class Quizzes: NSObject {
     var id = UUID()
     var title: String
     var img: String

@@ -21,7 +21,7 @@ struct Quizes: Identifiable {
 }
 
 
-struct XQuiz: Identifiable {
+struct Quiz: Identifiable {
     var id = UUID()
     var title: String
     var desc: String
