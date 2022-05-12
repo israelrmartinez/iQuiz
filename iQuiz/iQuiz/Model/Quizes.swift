@@ -26,23 +26,22 @@ struct Quiz: Identifiable {
     var title: String
     var desc: String
     var img: String
-//    var questions: [String]
+    var questions: Dictionary<String, String>
     var answers: [String] = []
     
     init(quiz test: Dictionary<String, Any>) {
-//        self.title = test["title"] as! String
         self.title = test["title"] as! String
         self.desc = test["desc"] as! String
+        self.questions = test["questions"] as! Dictionary<String, String>
         self.img = "math"
-//        self.questions = test["desc"] as! [String]
         print("key: \(test["title"] as! String)")
-//        setTest()
+        setTest()
     }
     
-//    func setTest() {
-//        var questionHolder: Array<Dictionary<String, Any>>
-//        for question in questions {
-//            print("questions" + question)
-//        }
-//    }
+    func setTest() {
+        var questionHolder: Array<Dictionary<String, Any>>
+        for question in questions {
+            print("questions \(question.value)")
+        }
+    }
 }
