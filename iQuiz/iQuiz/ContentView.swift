@@ -15,6 +15,7 @@ struct ContentView: View {
         Quiz(quizName: "Science", quizImage: "science")
     ]
     
+    
     var body: some View {
         NavigationView {
             VStack {
