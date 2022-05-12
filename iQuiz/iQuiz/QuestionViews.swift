@@ -11,7 +11,7 @@ struct QuestionViews: View {
     var questions: [Question]
     var numQuestions: Int
     var views: [QuestionView] = []
-//    @StateObject private var viewModel: [QuestionView]
+    @State private var counter = 0
     
     init(_ quests: [Question]) {
         self.questions = quests
@@ -30,7 +30,6 @@ struct QuestionViews: View {
     
     var body: some View {
 //            Text(questions[0].text)
-        NavigationView {
             
 //            ForEach(questions.indices) { index in
 //    //                Text("answer \(index): \(questions[index].answer)"
@@ -45,10 +44,17 @@ struct QuestionViews: View {
 //                    }
 //                }
 //            Text("this view: \(views)")
-            VStack {
-                views[0]
+//            ForEach(0..<self.counter) { index in
+            
+        VStack {
+//                ForEach(0..<self.counter) { index in
+                    Text("\(self.counter)")
+                    views[self.counter]
+                    NavigationLink(destination: views[counter + 1], label: {Text("Go")})
+//                }
             }
-        }
+        
+//            }
 //            Text("answer: \(questions[0].answer)")
 //            QuestionView(question: questions[0])
 //        ForEach(1..<numQuestions, id: \.self) { i in
@@ -56,7 +62,7 @@ struct QuestionViews: View {
 //        }
     }
     
-    func getDestination(_ index: Int) -> QuestionView {
+    func getDestinations(_ index: Int) -> QuestionView {
         if index < numQuestions {
             return views[index + 1]
         } else {
