@@ -17,15 +17,13 @@ struct QuestionViews: View {
     }
     
     var body: some View {
-        VStack {
-            Text(questions[0].text)
-            Text(questions[0].answers[1])
-            Text(questions[0].answer)
+//            Text(questions[0].text)
             ForEach(questions.indices) { index in
-                Text(questions[index].answer)
+//                Text("answer \(index): \(questions[index].answer)"
+                QuestionView(question: questions[index])
             }
+//            Text("answer: \(questions[0].answer)")
 //            QuestionView(question: questions[0])
-        }
 //        ForEach(1..<numQuestions, id: \.self) { i in
 //            QuestionView(question: questions[0])
 //        }
@@ -40,14 +38,14 @@ struct QuestionView: View {
 //    print(question)
     var body: some View {
         VStack {
-            Spacer()
             Text(question.text)
                 .padding()
+            ForEach(question.answers.indices) { index in
+                Text(question.answers[index])
+                    .padding()
+            }
             Text(question.answer)
                 .padding()
-            Text(question.answers[2])
-                .padding()
-            Spacer()
         }
 
 //        Text(quz["title"] as! String)
