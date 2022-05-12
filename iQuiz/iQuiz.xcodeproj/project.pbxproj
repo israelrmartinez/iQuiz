@@ -16,6 +16,7 @@
 		DB1F141A282AA2D400C86F43 /* iQuizUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB1F1419282AA2D400C86F43 /* iQuizUITestsLaunchTests.swift */; };
 		DB1F142A282AA41700C86F43 /* Quiz.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB1F1429282AA41700C86F43 /* Quiz.swift */; };
 		DB1F142E282AA4C500C86F43 /* TableQuizView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB1F142D282AA4C500C86F43 /* TableQuizView.swift */; };
+		DB742A38282D18A900A53D8D /* Question.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB742A37282D18A900A53D8D /* Question.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,6 +49,7 @@
 		DB1F1419282AA2D400C86F43 /* iQuizUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iQuizUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		DB1F1429282AA41700C86F43 /* Quiz.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Quiz.swift; sourceTree = "<group>"; };
 		DB1F142D282AA4C500C86F43 /* TableQuizView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableQuizView.swift; sourceTree = "<group>"; };
+		DB742A37282D18A900A53D8D /* Question.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Question.swift; path = ../../../../../temp/iQuiz/Model/Question.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -137,6 +139,7 @@
 			isa = PBXGroup;
 			children = (
 				DB1F1429282AA41700C86F43 /* Quiz.swift */,
+				DB742A37282D18A900A53D8D /* Question.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -271,6 +274,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DB742A38282D18A900A53D8D /* Question.swift in Sources */,
 				DB1F13FF282AA2D200C86F43 /* ContentView.swift in Sources */,
 				DB1F13FD282AA2D200C86F43 /* iQuizApp.swift in Sources */,
 				DB1F142E282AA4C500C86F43 /* TableQuizView.swift in Sources */,
