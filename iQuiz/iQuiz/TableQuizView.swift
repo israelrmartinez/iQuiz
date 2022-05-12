@@ -8,46 +8,40 @@
 import SwiftUI
 
 struct QuizList: View {
-    var quzes: [Quizes]
-    var quizzes: [Quiz]
+    var setQuizzes: [Quiz]
     
     var body: some View {
-//        List(quizzes) {
-//            quiz in ListRow(eachQuiz: quiz)
-//        }
-        List(quizzes) {
-            quiz in ListRow(eachQuiz: quiz)
+        List(setQuizzes) {
+            quiz in ListRow(oneQuiz: quiz)
         }
     }
 }
 
 struct ListRow: View {
-    var eachQuiz: Quiz
+    var oneQuiz: Quiz
     var body: some View {
         VStack {
             HStack {
-                Image(eachQuiz.img)
+                Image(oneQuiz.img)
                     .resizable()
                     .aspectRatio(contentMode: .fit)
                     .frame(maxWidth: 40)
-                Text(eachQuiz.title)
+                Text(oneQuiz.title)
             }
-            Text(eachQuiz.desc)
-            NavigationLink(destination: {
-                Label(
-                    title: {Text("iQuiz")}, icon: {})
-                    .padding()
-                Text("\(eachQuiz.title) screen")
-            }, label: {Text("Next screen")})
+            NavigationLink(destination: QuizView(quiz: oneQuiz), label: {Text("Go")})
         }
+    }
+    
+    func getTitleView() {
+        
     }
 }
 
-var myQuizzies = [
-    Quizes(quizName: "Math", quizImage: "math"),
-    Quizes(quizName: "Marvel", quizImage: "marvel"),
-    Quizes(quizName: "Science", quizImage: "science")
-]
+struct SwiftUIView_Previews: PreviewProvider {
+    static var previews: some View {
+        QuizList(setQuizzes: myQuizzes)
+    }
+}
 
 var myQuizzes = [
     Quiz(quiz: [ "title":"Marvel Super Heroes", "desc": "Avengers, Assemble!",
@@ -79,9 +73,3 @@ var myQuizzes = [
            ]
      ])
 ]
-
-struct SwiftUIView_Previews: PreviewProvider {
-    static var previews: some View {
-        QuizList(quzes: myQuizzies, quizzes: myQuizzes)
-    }
-}

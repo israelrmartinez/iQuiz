@@ -9,12 +9,8 @@ import SwiftUI
 
 struct ContentView: View {
     @State private var showingAlert = false
-    var myQuz = [
-        Quizes(quizName: "Math", quizImage: "math"),
-        Quizes(quizName: "Marvel", quizImage: "marvel"),
-        Quizes(quizName: "Science", quizImage: "science"),
-    ]
-    var quiz = [
+    
+    var quizzes = [
         Quiz(quiz: [ "title":"Marvel Super Heroes", "desc": "Avengers, Assemble!",
                "questions":[
                  ["text":"Who is Iron Man?",
@@ -51,9 +47,7 @@ struct ContentView: View {
     
     var body: some View {
         NavigationView {
-            VStack {
-                QuizList(quzes: myQuz, quizzes: quiz)
-            }
+            QuizList(setQuizzes: quizzes)
             .navigationTitle("iQuiz")
             .toolbar {
                 ToolbarItem(placement: .navigationBarLeading) {
