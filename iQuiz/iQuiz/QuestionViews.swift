@@ -21,7 +21,10 @@ struct QuestionViews: View {
             Text(questions[0].text)
             Text(questions[0].answers[1])
             Text(questions[0].answer)
-            QuestionView(question: questions[0])
+            ForEach(questions.indices) { index in
+                Text(questions[index].answer)
+            }
+//            QuestionView(question: questions[0])
         }
 //        ForEach(1..<numQuestions, id: \.self) { i in
 //            QuestionView(question: questions[0])
