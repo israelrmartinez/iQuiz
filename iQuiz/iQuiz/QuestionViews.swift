@@ -15,7 +15,7 @@ struct QuestionViews: View {
     
     init(_ quests: [Question]) {
         self.questions = quests
-        self.numQuestions = questions[0].answers.count
+        self.numQuestions = questions.count
         getViews()
     }
     
@@ -50,7 +50,7 @@ struct QuestionViews: View {
 //                ForEach(0..<self.counter) { index in
                     Text("\(self.counter)")
                     views[self.counter]
-                    NavigationLink(destination: views[counter + 1], label: {Text("Go")})
+            NavigationLink(destination: getDestinations(self.counter), label: {Text("Go")})
 //                }
             }
         
@@ -63,8 +63,9 @@ struct QuestionViews: View {
     }
     
     func getDestinations(_ index: Int) -> QuestionView {
+        self.counter += 1
         if index < numQuestions {
-            return views[index + 1]
+            return views[counter]
         } else {
             return views[index]
         }
