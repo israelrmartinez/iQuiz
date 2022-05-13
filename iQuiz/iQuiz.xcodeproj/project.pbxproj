@@ -20,6 +20,7 @@
 		DB742A3C282D1FFF00A53D8D /* Quzzies.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB742A3B282D1FFF00A53D8D /* Quzzies.swift */; };
 		DB742A3E282D35BD00A53D8D /* QuizView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB742A3D282D35BD00A53D8D /* QuizView.swift */; };
 		DB742A40282D42B500A53D8D /* QuestionViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB742A3F282D42B500A53D8D /* QuestionViews.swift */; };
+		DBFD91D0282E321C00779563 /* ResultsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBFD91CF282E321C00779563 /* ResultsView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,6 +57,7 @@
 		DB742A3B282D1FFF00A53D8D /* Quzzies.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Quzzies.swift; sourceTree = "<group>"; };
 		DB742A3D282D35BD00A53D8D /* QuizView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizView.swift; sourceTree = "<group>"; };
 		DB742A3F282D42B500A53D8D /* QuestionViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionViews.swift; sourceTree = "<group>"; };
+		DBFD91CF282E321C00779563 /* ResultsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultsView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,10 +112,11 @@
 				DB1F13FC282AA2D200C86F43 /* iQuizApp.swift */,
 				DB1F13FE282AA2D200C86F43 /* ContentView.swift */,
 				DB1F142D282AA4C500C86F43 /* TableQuizView.swift */,
-				DB1F1400282AA2D400C86F43 /* Assets.xcassets */,
-				DB1F1402282AA2D400C86F43 /* Preview Content */,
 				DB742A3D282D35BD00A53D8D /* QuizView.swift */,
 				DB742A3F282D42B500A53D8D /* QuestionViews.swift */,
+				DBFD91CF282E321C00779563 /* ResultsView.swift */,
+				DB1F1400282AA2D400C86F43 /* Assets.xcassets */,
+				DB1F1402282AA2D400C86F43 /* Preview Content */,
 			);
 			path = iQuiz;
 			sourceTree = "<group>";
@@ -284,6 +287,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DB742A3A282D1F1000A53D8D /* Question.swift in Sources */,
+				DBFD91D0282E321C00779563 /* ResultsView.swift in Sources */,
 				DB1F13FF282AA2D200C86F43 /* ContentView.swift in Sources */,
 				DB742A3C282D1FFF00A53D8D /* Quzzies.swift in Sources */,
 				DB742A3E282D35BD00A53D8D /* QuizView.swift in Sources */,

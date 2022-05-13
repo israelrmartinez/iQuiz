@@ -8,58 +8,71 @@
 import SwiftUI
 
 struct QuestionViews: View {
+    @State private var activeIndex = 0
+    @State private var nextIndex = 1
+    
     var questions: [Question]
     var numQuestions: Int
     var views: [QuestionView] = []
-    @State private var counter = 0
+    var activeView: QuestionView?
+//    var activeView: QuestionView = QuestionView(question: Question())
+//    var activeView: QuestionView
     
     init(_ quests: [Question]) {
         self.questions = quests
-        self.numQuestions = questions[0].answers.count
+        self.numQuestions = questions.count
         getViews()
+        getActive()
+//        self.activeView = views[0]
+    }
+    
+    var body: some View {
+        ForEach(questions.indices) { index in
+            if numQuestions > activeIndex {
+                
+            }
+        }
+    }
+    
+    @ViewBuilder
+    var currentView: some View {
+        AnyView(
+            VStack{
+                views[activeIndex]
+                NavigationLink(destination: views[nextIndex], label: {Text("Continue")})
+            }
+        )
+    }
+    
+    @ViewBuilder
+    var nextView: some View {
+        AnyView(Text("test"))
     }
     
     mutating func getViews() {
         var setViews: [QuestionView] = []
-        for quest in questions {
-            setViews.append(QuestionView(question: quest))
+        for question in questions {
+            setViews.append(QuestionView(question: question))
+//            question.isActive = false
         }
         self.views = setViews
-        
     }
     
-    var body: some View {
-//            Text(questions[0].text)
-            
-//            ForEach(questions.indices) { index in
-//    //                Text("answer \(index): \(questions[index].answer)"
-//                    if index < numQuestions {
-//                        VStack {
-//                            Text("index: \(index)")
-//                            QuestionView(question: questions[index])
-//                            NavigationLink(destination: getDestination(index), label: {Text("Next")})
-//                        }
-//                    } else {
-//                        QuestionView(question: questions[index])
-//                    }
-//                }
-//            Text("this view: \(views)")
-//            ForEach(0..<self.counter) { index in
-            
-        VStack {
-//                ForEach(0..<self.counter) { index in
-//                    Text("\(self.counter)")
-                    views[self.counter]
-                    NavigationLink(destination: views[counter + 1], label: {Text("Continue")})
-//                }
+    mutating func getActive() {
+        self.activeView = views[activeIndex]
+    }
+    
+    mutating func detectActive() {
+        if (questions.count > activeIndex || questions.count >= nextIndex) {
+            for i in 0..<questions.count {
+                if activeIndex == i {
+                    questions[i].isActive = true
+                }
+                questions[i].isActive = false
             }
-        
-//            }
-//            Text("answer: \(questions[0].answer)")
-//            QuestionView(question: questions[0])
-//        ForEach(1..<numQuestions, id: \.self) { i in
-//            QuestionView(question: questions[0])
-//        }
+            self.activeIndex += 1
+            self.nextIndex += 1
+        }
     }
     
     func getDestinations(_ index: Int) -> QuestionView {
