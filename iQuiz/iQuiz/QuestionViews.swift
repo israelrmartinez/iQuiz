@@ -15,7 +15,7 @@ struct QuestionViews: View {
     
     init(_ quests: [Question]) {
         self.questions = quests
-        self.numQuestions = questions.count
+        self.numQuestions = questions[0].answers.count
         getViews()
     }
     
@@ -48,9 +48,9 @@ struct QuestionViews: View {
             
         VStack {
 //                ForEach(0..<self.counter) { index in
-                    Text("\(self.counter)")
+//                    Text("\(self.counter)")
                     views[self.counter]
-            NavigationLink(destination: getDestinations(self.counter), label: {Text("Go")})
+                    NavigationLink(destination: views[counter + 1], label: {Text("Go")})
 //                }
             }
         
@@ -63,9 +63,8 @@ struct QuestionViews: View {
     }
     
     func getDestinations(_ index: Int) -> QuestionView {
-        self.counter += 1
         if index < numQuestions {
-            return views[counter]
+            return views[index + 1]
         } else {
             return views[index]
         }
@@ -74,26 +73,39 @@ struct QuestionViews: View {
 
 struct QuestionView: View {
     @State var selection: String = ""
+    @State var didTap: [Bool] = [false, false, false, false]
     @State var submitted: Bool = false
+//    @Published var counter: Int
     
     var question: Question
 //    var quz: Quiz
 //    print(question)
     var body: some View {
-        VStack {
-            Text(question.text)
-                .padding()
-            ForEach(question.answers.indices) { index in
-                HStack {
-                    Text(question.answers[index])
-                        .padding()
+        List {
+            Section( header: Text(question.text)) {
+                ForEach(question.answers.indices) { index in
+                    HStack {
+                        Text(question.answers[index])
+                            .frame(maxWidth: .infinity)
+                            .background(didTap[index] ? Color.yellow : Color.clear)
+//                        Button(action: {print("yuh")}, label: {"heloo"})
+                    }
+                    .onTapGesture {
+                        self.selection = question.answers[index]
+                        for i in 0..<question.answers.count {
+                            self.didTap[i] = false
+                        }
+                        didTap[index].toggle()
+                        print("Selection: \(self.selection)")
+                    }
                 }
+                Button("Submit", action: {self.submitted = true})
             }
-            Text(question.answer)
-                .padding()
         }
-
-//        Text(quz["title"] as! String)
+    }
+    
+    func checkAnswer() {
+        
     }
 //    func he() {
 //        print(question)
