@@ -50,7 +50,7 @@ struct QuestionViews: View {
 //                ForEach(0..<self.counter) { index in
 //                    Text("\(self.counter)")
                     views[self.counter]
-                    NavigationLink(destination: views[counter + 1], label: {Text("Go")})
+                    NavigationLink(destination: views[counter + 1], label: {Text("Continue")})
 //                }
             }
         
@@ -75,6 +75,7 @@ struct QuestionView: View {
     @State var selection: String = ""
     @State var didTap: [Bool] = [false, false, false, false]
     @State var submitted: Bool = false
+//    @State var submitButton = ""
 //    @Published var counter: Int
     
     var question: Question
@@ -91,21 +92,58 @@ struct QuestionView: View {
 //                        Button(action: {print("yuh")}, label: {"heloo"})
                     }
                     .onTapGesture {
-                        self.selection = question.answers[index]
+                        question.selection = question.answers[index]
                         for i in 0..<question.answers.count {
                             self.didTap[i] = false
                         }
                         didTap[index].toggle()
-                        print("Selection: \(self.selection)")
+                        print("Selection: \(question.selection)")
                     }
                 }
-                Button("Submit", action: {self.submitted = true})
+                submitButton
+//                {
+//                    self.selection != "" ?
+//                    Button("Submit", action: {checkAnswer}) :
+//                    Button("submit", action: checkAnswer).hidden()
+//                }
             }
+            theAnswer
         }
     }
     
+    @ViewBuilder
+    var submitButton: some View {
+        if question.selection != "" && submitted == false {
+            AnyView(Button("Submit", action: {
+                checkAnswer()
+            }))
+        } else {
+            AnyView(Text(""))
+        }
+    }
+    
+    @ViewBuilder
+    var theAnswer: some View {
+        if submitted == true && question.selection == question.answer {
+            AnyView(Text("CORRECT! The answer was \(question.answer)"))
+        } else if submitted == true && question.selection != question.answer {
+            AnyView(Text("WRONG! The answer was \(question.answer)"))
+        } else {
+            AnyView(Text(""))
+        }
+    }
+
+    
     func checkAnswer() {
-        
+        print("submitted: \(question.selection)")
+        self.submitted = true
+        if question.selection != question.answer {
+            question.isCorrect = false
+            print("selection \(question.selection) = \(question.answer) : \(question.isCorrect)")
+        } else {
+            question.isCorrect = true
+            print("correct! \(question.isCorrect)")
+        }
     }
 //    func he() {
 //        print(question)
