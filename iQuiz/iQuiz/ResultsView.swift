@@ -12,18 +12,12 @@ struct ResultsList: View {
     
     var body: some View {
         Text("\(userModel.score) / \(userModel.total) correct")
-//        VStack {
-//            Text("Wrong answers: ")
-//            HStack {
-//                Text("Your answer")
-//                Text("Correct Answer")
-//            }
-//        }
         List(userModel.questions, id: \.self) {
             question in ResultRow(question: question)
         }
-        NavigationLink(destination: ContentView().navigationBarHidden(true), label: {Text("Return")})
+        NavigationLink(destination: ContentView().navigationBarHidden(true), label: {Text("Back to Home")})
             .isDetailLink(false)
+            .navigationBarHidden(true)
     }
 }
 
@@ -49,6 +43,7 @@ struct ResultRow: View {
         } else {
             AnyView(
                 VStack {
+                    Spacer()
                     Text("\(question.text)")
                         .fixedSize(horizontal: false, vertical: true)
                     Spacer()
@@ -60,6 +55,7 @@ struct ResultRow: View {
                         Text("Correct: \(question.answer)")
                             .foregroundColor(.green)
                     }.fixedSize(horizontal: false, vertical: true)
+                    Spacer()
                 }
             )
         }
