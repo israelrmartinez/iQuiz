@@ -28,6 +28,10 @@ class UserModel: ObservableObject {
         print("\(activeIndex)")
     }
     
+    func updateIndex() {
+        self.activeIndex += 1
+    }
+    
 //    func getDestinations(_ index: Int) -> QuestionView {
 //        if index < numQuestions {
 //            return views[index + 1]
@@ -41,8 +45,30 @@ struct ChangeView: View {
     @ObservedObject var userModel: UserModel
 //    @Published var user: User = User()
     
+//    init(userModel model: UserModel) {
+//        self.userModel = model
+//        self.userModel.activeIndex += 1
+//    }
+    
     var body: some View {
-        Text("\(userModel.activeIndex + 1)")
+        currentView
+        nextView.onAppear {
+            userModel.updateIndex()
+        }
+    }
+    
+    @ViewBuilder
+    var currentView: some View {
+        AnyView(userModel.views[userModel.activeIndex])
+    }
+    
+    @ViewBuilder
+    var nextView: some View {
+        AnyView(NavigationLink(destination:{
+            ChangeView(userModel: userModel)
+        }, label: {Text("Continue")})).onAppear {
+//            userModel.updateIndex()
+        }
     }
 }
 
