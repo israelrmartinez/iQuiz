@@ -7,49 +7,14 @@
 
 import SwiftUI
 
-struct QuestionViews: View {
-    @State private var activeIndex = 0
-    @State private var nextIndex = 1
+class UserModel: ObservableObject {
+    @Published var views: [QuestionView] = []
+    @Published var questions: [Question] = []
+    @Published var activeView: QuestionView?
+    @Published var activeIndex: Int = 0
+    @Published private var wrongAnswers: [String] = []
     
-    var questions: [Question]
-    var numQuestions: Int
-    var views: [QuestionView] = []
-    var activeView: QuestionView?
-//    var activeView: QuestionView = QuestionView(question: Question())
-//    var activeView: QuestionView
-    
-    init(_ quests: [Question]) {
-        self.questions = quests
-        self.numQuestions = questions.count
-        getViews()
-        getActive()
-//        self.activeView = views[0]
-    }
-    
-    var body: some View {
-        ForEach(questions.indices) { index in
-            if numQuestions > activeIndex {
-                
-            }
-        }
-    }
-    
-    @ViewBuilder
-    var currentView: some View {
-        AnyView(
-            VStack{
-                views[activeIndex]
-                NavigationLink(destination: views[nextIndex], label: {Text("Continue")})
-            }
-        )
-    }
-    
-    @ViewBuilder
-    var nextView: some View {
-        AnyView(Text("test"))
-    }
-    
-    mutating func getViews() {
+    func getViews() {
         var setViews: [QuestionView] = []
         for question in questions {
             setViews.append(QuestionView(question: question))
@@ -58,29 +23,60 @@ struct QuestionViews: View {
         self.views = setViews
     }
     
-    mutating func getActive() {
-        self.activeView = views[activeIndex]
+    func setQuestions(_ questions: [Question]) {
+        self.questions = questions
+        print("\(activeIndex)")
     }
     
-    mutating func detectActive() {
-        if (questions.count > activeIndex || questions.count >= nextIndex) {
-            for i in 0..<questions.count {
-                if activeIndex == i {
-                    questions[i].isActive = true
-                }
-                questions[i].isActive = false
-            }
-            self.activeIndex += 1
-            self.nextIndex += 1
+//    func getDestinations(_ index: Int) -> QuestionView {
+//        if index < numQuestions {
+//            return views[index + 1]
+//        } else {
+//            return views[index]
+//        }
+//    }
+}
+
+struct ChangeView: View {
+    @ObservedObject var userModel: UserModel
+//    @Published var user: User = User()
+    
+    var body: some View {
+        Text("\(userModel.activeIndex + 1)")
+    }
+}
+
+struct QuestionViews: View {
+//    @State private var nextIndex = 1
+    @ObservedObject var userModel: UserModel = UserModel()
+    
+//    var numQuestions: Int
+//    var activeView: QuestionView = QuestionView(question: Question())
+//    var activeView: QuestionView
+    
+    init(_ quests: [Question]) {
+        self.userModel.setQuestions(quests)
+        self.userModel.getViews()
+//        self.activeView = views[0]
+    }
+    
+    var body: some View {
+        VStack {
+            currentView
+            nextView
         }
     }
     
-    func getDestinations(_ index: Int) -> QuestionView {
-        if index < numQuestions {
-            return views[index + 1]
-        } else {
-            return views[index]
-        }
+    @ViewBuilder
+    var currentView: some View {
+        AnyView(userModel.views[userModel.activeIndex])
+    }
+    
+    @ViewBuilder
+    var nextView: some View {
+        AnyView(NavigationLink(destination:{
+            ChangeView(userModel: userModel)
+        }, label: {Text("Continue")}))
     }
 }
 
@@ -96,7 +92,12 @@ struct QuestionView: View {
 //    print(question)
     var body: some View {
         List {
-            Section( header: Text(question.text)) {
+            Section( header:
+                        Text(question.text)
+                .multilineTextAlignment(.center)
+                .font(.title)
+                .padding()
+            ) {
                 ForEach(question.answers.indices) { index in
                     HStack {
                         Text(question.answers[index])
@@ -166,7 +167,7 @@ struct QuestionView: View {
 struct QuestionViews_Previews: PreviewProvider {
     static var previews: some View {
         QuestionViews(quesQuiz.questions)
-            .previewInterfaceOrientation(.portraitUpsideDown)
+            .previewInterfaceOrientation(.portrait)
     }
 }
 
