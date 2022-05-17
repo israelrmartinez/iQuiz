@@ -105,7 +105,7 @@ struct ChangeView: View {
                 ChangeView(userModel: userModel)
             }, label: {Text("Continue")}))
         } else {
-            AnyView(NavigationLink(destination: ResultsView(userModel: userModel), label: {Text("View results")}))
+            AnyView(NavigationLink(destination: ResultsList(userModel: userModel), label: {Text("View results")}))
                 .onAppear {
                     userModel.calculateScore()
                 }
