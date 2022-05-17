@@ -43,6 +43,34 @@ class UserModel: ObservableObject {
     }
 }
 
+struct QuestionViews: View {
+    @ObservedObject var userModel: UserModel = UserModel()
+    
+    init(_ quests: [Question]) {
+        self.userModel.setQuestions(quests)
+        self.userModel.getViews()
+    }
+    
+    var body: some View {
+        VStack {
+            currentView
+            nextView.navigationBarHidden(true)
+        }
+    }
+    
+    @ViewBuilder
+    var currentView: some View {
+        AnyView(userModel.views[userModel.activeIndex])
+    }
+    
+    @ViewBuilder
+    var nextView: some View {
+        AnyView(NavigationLink(destination:{
+            ChangeView(userModel: userModel)
+        }, label: {Text("Continue")}))
+    }
+}
+
 struct ChangeView: View {
     @ObservedObject var userModel: UserModel
     
@@ -68,42 +96,6 @@ struct ChangeView: View {
             }, label: {Text("Continue")}))
         } else {
             AnyView(NavigationLink(destination: ResultsView(userModel: userModel), label: {Text("View results")}))
-        }
-    }
-}
-
-struct QuestionViews: View {
-    @ObservedObject var userModel: UserModel = UserModel()
-    
-    init(_ quests: [Question]) {
-        self.userModel.setQuestions(quests)
-        self.userModel.getViews()
-    }
-    
-    var body: some View {
-        VStack {
-            currentView
-            nextView.navigationBarHidden(true)
-        }
-    }
-    
-    @ViewBuilder
-    var currentView: some View {
-        if userModel.activeIndex < userModel.questions.count {
-            AnyView(userModel.views[userModel.activeIndex])
-        }
-    }
-    
-    @ViewBuilder
-    var nextView: some View {
-        if userModel.activeIndex < userModel.questions.count {
-            AnyView(NavigationLink(destination:{
-                ChangeView(userModel: userModel)
-            }, label: {Text("Continue")}))
-        } else {
-            AnyView(NavigationLink(destination:{
-                ResultsView(userModel: userModel)
-            }, label: {Text("View results")}))
         }
     }
 }
