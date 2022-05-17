@@ -12,9 +12,11 @@ class UserModel: ObservableObject {
     @Published var views: [QuestionView] = []
     @Published var questions: [Question] = []
     @Published var activeIndex: Int = 0
-    @Published private var wrongAnswers: [String] = []
-    @Published private var correctAnswers: [String] = []
+    @Published private var wrongAnswers: [Question] = []
+    @Published private var correctAnswers: [Question] = []
     @Published var showResults = false
+    @Published var score = 0
+    @Published var total = 0
     
     func getViews() {
         var setViews: [QuestionView] = []
@@ -27,19 +29,27 @@ class UserModel: ObservableObject {
     
     func setQuestions(_ questions: [Question]) {
         self.questions = questions
+        self.total = questions.count
         print("active: \(activeIndex)")
     }
     
     func updateIndex() {
         self.activeIndex += 1
-        if activeIndex == views.count - 1{
+        if activeIndex == views.count - 1 {
             self.showResults = true
             print("i'm out of index")
         }
     }
     
-    func updateScore() {
-        
+    func calculateScore() {
+        for question in questions {
+            if question.isCorrect == true {
+                self.score += 1
+                correctAnswers.append(question)
+            } else {
+                wrongAnswers.append(question)
+            }
+        }
     }
 }
 
@@ -96,6 +106,9 @@ struct ChangeView: View {
             }, label: {Text("Continue")}))
         } else {
             AnyView(NavigationLink(destination: ResultsView(userModel: userModel), label: {Text("View results")}))
+                .onAppear {
+                    userModel.calculateScore()
+                }
         }
     }
 }

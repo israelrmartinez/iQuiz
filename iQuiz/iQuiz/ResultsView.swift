@@ -11,8 +11,12 @@ struct ResultsView: View {
     @ObservedObject var userModel: UserModel
     
     var body: some View {
-        Text("\(userModel.questions[0].text)")
+        Text("\(userModel.score) / \(userModel.total) correct")
         VStack {
+            Text("Wrong answers: ")
+            HStack {
+                
+            }
             NavigationLink(destination: ContentView().navigationBarHidden(true), label: {Text("Return")})
                 .isDetailLink(false)
         }
