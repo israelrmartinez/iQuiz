@@ -6,13 +6,15 @@
 //
 
 import SwiftUI
+import Foundation
 
 class UserModel: ObservableObject {
     @Published var views: [QuestionView] = []
     @Published var questions: [Question] = []
-    @Published var activeView: QuestionView?
     @Published var activeIndex: Int = 0
     @Published private var wrongAnswers: [String] = []
+    @Published private var correctAnswers: [String] = []
+    @Published var showResults = false
     
     func getViews() {
         var setViews: [QuestionView] = []
@@ -30,6 +32,15 @@ class UserModel: ObservableObject {
     
     func updateIndex() {
         self.activeIndex += 1
+        print("\(activeIndex) new")
+        if activeIndex == views.count - 1 {
+            self.showResults = true
+            print("i'm out of index")
+        }
+    }
+    
+    func updateScore() {
+        
     }
     
 //    func getDestinations(_ index: Int) -> QuestionView {
@@ -51,23 +62,27 @@ struct ChangeView: View {
 //    }
     
     var body: some View {
-        currentView
-        nextView.onAppear {
+        currentView.onAppear {
             userModel.updateIndex()
         }
+        nextView.navigationBarHidden(true)
     }
     
     @ViewBuilder
     var currentView: some View {
-        AnyView(userModel.views[userModel.activeIndex])
+        if userModel.activeIndex < userModel.questions.count {
+            AnyView(userModel.views[userModel.activeIndex])
+        }
     }
     
     @ViewBuilder
     var nextView: some View {
-        AnyView(NavigationLink(destination:{
-            ChangeView(userModel: userModel)
-        }, label: {Text("Continue")})).onAppear {
-//            userModel.updateIndex()
+        if userModel.showResults != true {
+            AnyView(NavigationLink(destination:{
+                ChangeView(userModel: userModel)
+            }, label: {Text("Continue")}))
+        } else {
+            AnyView(NavigationLink(destination: ResultsView(userModel: userModel), label: {Text("View results")}))
         }
     }
 }
@@ -75,34 +90,39 @@ struct ChangeView: View {
 struct QuestionViews: View {
 //    @State private var nextIndex = 1
     @ObservedObject var userModel: UserModel = UserModel()
-    
-//    var numQuestions: Int
-//    var activeView: QuestionView = QuestionView(question: Question())
-//    var activeView: QuestionView
+    var quests: [Question] = []
     
     init(_ quests: [Question]) {
         self.userModel.setQuestions(quests)
         self.userModel.getViews()
-//        self.activeView = views[0]
+        self.quests = quests
     }
     
     var body: some View {
         VStack {
             currentView
-            nextView
+            nextView.navigationBarHidden(true)
         }
     }
     
     @ViewBuilder
     var currentView: some View {
-        AnyView(userModel.views[userModel.activeIndex])
+        if userModel.activeIndex < userModel.questions.count {
+            AnyView(userModel.views[userModel.activeIndex])
+        }
     }
     
     @ViewBuilder
     var nextView: some View {
-        AnyView(NavigationLink(destination:{
-            ChangeView(userModel: userModel)
-        }, label: {Text("Continue")}))
+        if userModel.activeIndex < userModel.questions.count {
+            AnyView(NavigationLink(destination:{
+                ChangeView(userModel: userModel)
+            }, label: {Text("Continue")}))
+        } else {
+            AnyView(NavigationLink(destination:{
+                ResultsView(userModel: userModel)
+            }, label: {Text("View results")}))
+        }
     }
 }
 
@@ -185,9 +205,6 @@ struct QuestionView: View {
             print("correct! \(question.isCorrect)")
         }
     }
-//    func he() {
-//        print(question)
-//    }
 }
 
 struct QuestionViews_Previews: PreviewProvider {
