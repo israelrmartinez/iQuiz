@@ -27,13 +27,12 @@ class UserModel: ObservableObject {
     
     func setQuestions(_ questions: [Question]) {
         self.questions = questions
-        print("\(activeIndex)")
+        print("active: \(activeIndex)")
     }
     
     func updateIndex() {
         self.activeIndex += 1
-        print("\(activeIndex) new")
-        if activeIndex == views.count - 1 {
+        if activeIndex == views.count - 1{
             self.showResults = true
             print("i'm out of index")
         }
@@ -90,12 +89,10 @@ struct ChangeView: View {
 struct QuestionViews: View {
 //    @State private var nextIndex = 1
     @ObservedObject var userModel: UserModel = UserModel()
-    var quests: [Question] = []
     
     init(_ quests: [Question]) {
         self.userModel.setQuestions(quests)
         self.userModel.getViews()
-        self.quests = quests
     }
     
     var body: some View {

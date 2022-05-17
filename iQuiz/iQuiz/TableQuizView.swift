@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct QuizList: View {
-    var setQuizzes: [Quiz]
+    @Binding var setQuizzes: [Quiz]
     
     var body: some View {
         List(setQuizzes) {
@@ -38,8 +38,9 @@ struct ListRow: View {
 }
 
 struct SwiftUIView_Previews: PreviewProvider {
+    static var quizzies = myQuizzes as! Binding<[Quiz]>
     static var previews: some View {
-        QuizList(setQuizzes: myQuizzes)
+        QuizList(setQuizzes: quizzies)
     }
 }
 

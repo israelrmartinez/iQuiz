@@ -11,7 +11,11 @@ struct ResultsView: View {
     @ObservedObject var userModel: UserModel
     
     var body: some View {
-        Text("Hello, World!")
+        Text("\(userModel.questions[0])")
+        VStack {
+            NavigationLink(destination: ContentView().navigationBarHidden(true), label: {Text("he")})
+                .isDetailLink(false)
+        }
     }
 }
 
