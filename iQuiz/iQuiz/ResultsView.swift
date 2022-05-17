@@ -48,13 +48,18 @@ struct ResultRow: View {
             )
         } else {
             AnyView(
-                HStack {
-                    Text("Your answer: \(question.selection)")
-                        .foregroundColor(.red)
+                VStack {
+                    Text("\(question.text)")
                         .fixedSize(horizontal: false, vertical: true)
                     Spacer()
-                    Text("Correct: \(question.answer)")
-                        .foregroundColor(.green)
+                    HStack {
+                        Text("Your answer: \(question.selection)")
+                            .foregroundColor(.red)
+                            .fixedSize(horizontal: false, vertical: true)
+                        Spacer()
+                        Text("Correct: \(question.answer)")
+                            .foregroundColor(.green)
+                    }.fixedSize(horizontal: false, vertical: true)
                 }
             )
         }
