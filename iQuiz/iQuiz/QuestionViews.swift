@@ -41,24 +41,10 @@ class UserModel: ObservableObject {
     func updateScore() {
         
     }
-    
-//    func getDestinations(_ index: Int) -> QuestionView {
-//        if index < numQuestions {
-//            return views[index + 1]
-//        } else {
-//            return views[index]
-//        }
-//    }
 }
 
 struct ChangeView: View {
     @ObservedObject var userModel: UserModel
-//    @Published var user: User = User()
-    
-//    init(userModel model: UserModel) {
-//        self.userModel = model
-//        self.userModel.activeIndex += 1
-//    }
     
     var body: some View {
         currentView.onAppear {
@@ -87,7 +73,6 @@ struct ChangeView: View {
 }
 
 struct QuestionViews: View {
-//    @State private var nextIndex = 1
     @ObservedObject var userModel: UserModel = UserModel()
     
     init(_ quests: [Question]) {
@@ -127,12 +112,8 @@ struct QuestionView: View {
     @State var selection: String = ""
     @State var didTap: [Bool] = [false, false, false, false]
     @State var submitted: Bool = false
-//    @State var submitButton = ""
-//    @Published var counter: Int
     
     var question: Question
-//    var quz: Quiz
-//    print(question)
     var body: some View {
         List {
             Section( header:
