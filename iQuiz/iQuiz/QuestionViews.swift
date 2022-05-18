@@ -38,6 +38,7 @@ class UserModel: ObservableObject {
     
     func updateIndex() {
         self.activeIndex += 1
+        self.calculateScore()
         if activeIndex == views.count - 1 {
             self.showResults = true
             print("i'm out of index")
