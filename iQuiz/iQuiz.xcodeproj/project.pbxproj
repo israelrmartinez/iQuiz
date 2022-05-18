@@ -20,6 +20,7 @@
 		DB742A3C282D1FFF00A53D8D /* Quzzies.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB742A3B282D1FFF00A53D8D /* Quzzies.swift */; };
 		DB742A3E282D35BD00A53D8D /* QuizView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB742A3D282D35BD00A53D8D /* QuizView.swift */; };
 		DB742A40282D42B500A53D8D /* QuestionViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB742A3F282D42B500A53D8D /* QuestionViews.swift */; };
+		DBD23A562834694400029AE1 /* Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBD23A552834694400029AE1 /* Data.swift */; };
 		DBFD91D0282E321C00779563 /* ResultsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBFD91CF282E321C00779563 /* ResultsView.swift */; };
 /* End PBXBuildFile section */
 
@@ -57,6 +58,7 @@
 		DB742A3B282D1FFF00A53D8D /* Quzzies.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Quzzies.swift; sourceTree = "<group>"; };
 		DB742A3D282D35BD00A53D8D /* QuizView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizView.swift; sourceTree = "<group>"; };
 		DB742A3F282D42B500A53D8D /* QuestionViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionViews.swift; sourceTree = "<group>"; };
+		DBD23A552834694400029AE1 /* Data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Data.swift; sourceTree = "<group>"; };
 		DBFD91CF282E321C00779563 /* ResultsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultsView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -117,6 +119,7 @@
 				DBFD91CF282E321C00779563 /* ResultsView.swift */,
 				DB1F1400282AA2D400C86F43 /* Assets.xcassets */,
 				DB1F1402282AA2D400C86F43 /* Preview Content */,
+				DBD23A552834694400029AE1 /* Data.swift */,
 			);
 			path = iQuiz;
 			sourceTree = "<group>";
@@ -287,6 +290,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DB742A3A282D1F1000A53D8D /* Question.swift in Sources */,
+				DBD23A562834694400029AE1 /* Data.swift in Sources */,
 				DBFD91D0282E321C00779563 /* ResultsView.swift in Sources */,
 				DB1F13FF282AA2D200C86F43 /* ContentView.swift in Sources */,
 				DB742A3C282D1FFF00A53D8D /* Quzzies.swift in Sources */,
