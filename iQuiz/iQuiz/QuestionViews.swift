@@ -145,7 +145,6 @@ struct QuestionView: View {
                         Text(question.answers[index])
                             .frame(maxWidth: .infinity)
                             .background(didTap[index] ? Color.yellow : Color.clear)
-//                        Button(action: {print("yuh")}, label: {"heloo"})
                     }
                     .onTapGesture {
                         question.selection = question.answers[index]
@@ -157,11 +156,6 @@ struct QuestionView: View {
                     }
                 }
                 submitButton
-//                {
-//                    self.selection != "" ?
-//                    Button("Submit", action: {checkAnswer}) :
-//                    Button("submit", action: checkAnswer).hidden()
-//                }
             }
             theAnswer
         }

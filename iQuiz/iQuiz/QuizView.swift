@@ -11,7 +11,6 @@ struct QuizView: View {
     var quiz: Quiz
     
     var body: some View {
-//            Text("\(self.title) screen")
         VStack {
             Text(quiz.title)
                 .multilineTextAlignment(.center)
