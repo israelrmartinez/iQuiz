@@ -107,9 +107,8 @@ struct ContentView: View {
             
             do {
                 let getQuizzes = try JSONSerialization.jsonObject(with: data!)
-                print("questions: \(getQuizzes)")
-                print("type: \(type(of: getQuizzes))")
-//                itemsDownloaded(items: getQuizzes as! [AnyObject])
+//                print("questions: \(getQuizzes)")
+                itemsDownloaded(items: getQuizzes as? NSArray)
             }
             catch {
                 print("Something went boom")
@@ -118,9 +117,23 @@ struct ContentView: View {
         session.resume()
     }
     
-    func itemsDownloaded(items: [AnyObject]!) {
-        var quzzes = items as NSArray as! [Quiz]
-        quzzes.forEach {_ in print(quzzes[0])}
+    func itemsDownloaded(items: NSArray!) {
+//        let quzzes = items as! NSArray as! [Quiz]
+//        quzzes.forEach {_ in
+//            print("the quizzes")
+//            print(quzzes[0])}
+        
+        if let quests = items as? Array<Any> {
+            print(items)
+            print(type(of: quests))
+            print("count: \(quests.count)")
+            print("quest: \(quests[0])")
+//            ForEach(quests.indices) { Int(index) in
+//                print("hey")
+//            }
+        } else {
+            print("nothing found")
+        }
     }
 }
 
