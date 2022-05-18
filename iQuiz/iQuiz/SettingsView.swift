@@ -12,7 +12,7 @@ struct SettingsView: View {
         NavigationView {
             Form {
                 Section(header: Text("Display")) {
-                    Button("yo", action: {})
+                    Button("Check now", action: {})
                 }
                 Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
             }

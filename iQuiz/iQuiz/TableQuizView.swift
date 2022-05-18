@@ -8,10 +8,11 @@
 import SwiftUI
 
 struct QuizList: View {
-    @Binding var setQuizzes: [Quiz]
+//    @Binding var setQuizzes: [Quiz]
+    @Binding var apiModel: ApiModel
     
     var body: some View {
-        List(setQuizzes) {
+        List(apiModel.quizzes) {
             quiz in ListRow(oneQuiz: quiz)
         }
     }
@@ -39,8 +40,9 @@ struct ListRow: View {
 
 struct SwiftUIView_Previews: PreviewProvider {
     static var quizzies = myQuizzes as! Binding<[Quiz]>
+    static var model = ApiModel() as! Binding<ApiModel>
     static var previews: some View {
-        QuizList(setQuizzes: quizzies)
+        QuizList(apiModel: model)
     }
 }
 

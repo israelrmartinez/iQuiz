@@ -8,7 +8,7 @@
 import SwiftUI
 
 
-struct Quiz: Identifiable {
+class Quiz: ObservableObject, Identifiable {
     var id = UUID()
     var title: String
     var desc: String
@@ -26,7 +26,7 @@ struct Quiz: Identifiable {
         let quest = quests[0]
     }
     
-    mutating func setQuiz(quests queries: [Dictionary<String, Any>]) -> [Question] {
+    func setQuiz(quests queries: [Dictionary<String, Any>]) -> [Question] {
         var questionHolder: [Question] = []
         for query in queries {
             let text = query["text"] as! String
