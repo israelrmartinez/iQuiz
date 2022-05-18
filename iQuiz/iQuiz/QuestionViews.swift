@@ -24,6 +24,9 @@ class UserModel: ObservableObject {
             setViews.append(QuestionView(question: question))
 //            question.isActive = false
         }
+        if setViews.count <= 1 {
+            self.showResults = true
+        }
         self.views = setViews
     }
     
@@ -38,6 +41,9 @@ class UserModel: ObservableObject {
         if activeIndex == views.count - 1 {
             self.showResults = true
             print("i'm out of index")
+        } else if views.count == 1 {
+            self.showResults = true
+            print("I only have one question")
         }
     }
     
@@ -75,9 +81,16 @@ struct QuestionViews: View {
     
     @ViewBuilder
     var nextView: some View {
-        AnyView(NavigationLink(destination:{
-            ChangeView(userModel: userModel)
-        }, label: {Text("Continue")}))
+        if userModel.showResults != true {
+            AnyView(NavigationLink(destination:{
+                ChangeView(userModel: userModel)
+            }, label: {Text("Continue")}))
+        } else {
+            AnyView(NavigationLink(destination: ResultsList(userModel: userModel), label: {Text("View results")}))
+                .onAppear {
+                    userModel.calculateScore()
+                }
+        }
     }
 }
 
