@@ -7,17 +7,39 @@
 
 import SwiftUI
 
-struct QuizModel: Codable, Identifiable {
+struct Data: Codable, Identifiable {
     let id: Int
     var title: String
     var desc: String
     var questions: [Question]
 }
 
-class ApiModel: ObservableObject {
+class FetchData: ObservableObject {
 //    @Binding var quizzes: [Quiz]
-//    @Binding var quizzes: [Quiz]
-    @Published var quizzes: [Quiz] = []
+    @Published var quizzes = [Quiz]()
+//    @Published var quizzes: [Quiz] = []
+    
+    init() {
+//        let url = URL(string: "https://tednewardsandbox.site44.com/questions.json")!
+//        // 2.
+//        URLSession.shared.dataTask(with: url) {(data, response, error) in
+//            do {
+//                if let quizData = data {
+//                    // 3.
+//                    let decodedData = try JSONDecoder().decode([Quiz].self, from: quizData)
+//                    DispatchQueue.main.async {
+//                        self.quizzes = decodedData
+//                        print(self.quizzes)
+//                    }
+//                } else {
+//                    print("No data")
+//                }
+//            } catch {
+//                print("Error")
+//            }
+//        }.resume()
+        loadData()
+    }
     
     func loadData() {
         self.quizzes = []
@@ -67,7 +89,7 @@ class ApiModel: ObservableObject {
                 print("loop title: \(oneTitle)")
                 print("loop desc: \(oneDesc)")
                 for quest in oneTestQuiz {
-                    print("loop quest title: \(quest["title"])")
+                    print("loop quest title: \(String(describing: quest["title"]))")
                 }
                 
                 let oneQuiz = Quiz(quiz: oneTest)

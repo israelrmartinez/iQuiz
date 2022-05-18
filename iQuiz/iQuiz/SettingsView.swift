@@ -11,12 +11,15 @@ struct SettingsView: View {
     var body: some View {
         NavigationView {
             Form {
-                Section(header: Text("Display")) {
-                    Button("Check now", action: {})
+                Section(header: Text("Download json from site")) {
+                    Button("Check now", action: {downloadJSON()})
                 }
                 Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
             }
         }
+    }
+    
+    func downloadJSON() {
         
     }
 }

@@ -40,7 +40,7 @@ struct ListRow: View {
 
 struct SwiftUIView_Previews: PreviewProvider {
     static var quizzies = myQuizzes
-    static var model = ApiModel() as! Binding<ApiModel>
+    static var model = FetchData() as! ObservedObject<FetchData>
     static var previews: some View {
         QuizList(setQuizzes: quizzies)
     }

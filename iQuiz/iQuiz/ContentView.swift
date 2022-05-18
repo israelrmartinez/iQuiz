@@ -11,14 +11,14 @@ struct ContentView: View {
     @State private var showingAlert = false
     @State var isActive: Bool = false
     @State var quizzes: [Quiz] = []
+    @ObservedObject var fetch = FetchData()
     
     var body: some View {
         NavigationView {
-            QuizList(setQuizzes: quizzes)
-            .navigationTitle("iQuiz")
-            .onAppear {
-                loadData()
+            List(fetch.quizzes) {
+                quiz in ListRow(oneQuiz: quiz)
             }
+            .navigationTitle("iQuiz")
             .toolbar {
                 ToolbarItem(placement: .navigationBarLeading) {
 //                    Button("Settings") {
@@ -27,17 +27,22 @@ struct ContentView: View {
                     NavigationLink("Settings", destination: SettingsView())
                     Spacer()
                 }
+//            QuizList(setQuizzes: quizzes)
+//            .navigationTitle("iQuiz")
+//            .onAppear {
+//                loadData()
             }
+//            }
 //            .padding()
 //            .alert("Settings go here", isPresented: $showingAlert, actions: {})
         }
     }
     
-    @ViewBuilder
-    var quizListView: some View {
-        
-        AnyView(Text(""))
-    }
+//    @ViewBuilder
+//    var quizListView: some View {
+//
+//        AnyView(Text(""))
+//    }
     
     func loadData() {
         let url = URL(string: "https://tednewardsandbox.site44.com/questions.json")
