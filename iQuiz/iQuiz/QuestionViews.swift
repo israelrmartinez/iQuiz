@@ -21,7 +21,7 @@ class UserModel: ObservableObject {
     func getViews() {
         var setViews: [QuestionView] = []
         for question in questions {
-            setViews.append(QuestionView(question: question))
+            setViews.append(QuestionView(question: question, UserModel: self))
 //            question.isActive = false
         }
         if setViews.count <= 1 {
@@ -48,8 +48,13 @@ class UserModel: ObservableObject {
         }
     }
     
+    func addScore() {
+        self.score += 1
+    }
+    
     func calculateScore() {
         for question in questions {
+            print("self score: \(self.score)")
             if question.isCorrect == true {
                 self.score += 1
                 correctAnswers.append(question)
@@ -131,8 +136,11 @@ struct QuestionView: View {
     @State var selection: String = ""
     @State var didTap: [Bool] = [false, false, false, false]
     @State var submitted: Bool = false
+//    @ObservedObject var userModel: UserModel
     
     var question: Question
+    @ObservedObject var UserModel: UserModel
+    
     var body: some View {
         List {
             Section( header:
@@ -194,6 +202,7 @@ struct QuestionView: View {
         } else {
             question.isCorrect = true
             print("correct! \(question.isCorrect)")
+            UserModel.addScore()
         }
     }
 }
